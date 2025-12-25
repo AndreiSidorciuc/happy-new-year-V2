@@ -7,9 +7,17 @@
 body {
   font-family: "Palatino Linotype", serif;
   overflow: hidden;
-  /* background: linear-gradient(180deg, #0a0e1a, #1a1f2e, #0f1419, #050810); */
-  background-image: url("https://media.istockphoto.com/id/1283307885/ru/%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F/stippled-%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80-%D1%82%D0%B5%D0%BA%D1%81%D1%82%D1%83%D1%80%D1%8B-%D1%84%D0%BE%D0%BD-%D0%B1%D0%B5%D0%BB%D1%8B%D0%B5-%D1%82%D0%BE%D1%87%D0%BA%D0%B8-%D0%BD%D0%B0-%D1%87%D0%B5%D1%80%D0%BD%D0%BE%D0%BC.jpg?s=612x612&w=0&k=20&c=JBmzHJmS12CK6nvi05MY57kDIsYrqgjgEUpFGmQrEQ0=");
+  /* background: linear-gradient(180deg, #1a2332, #2d3e50, #1e3a52, #0f2537); */
+  background-image: url("https://i.artfile.ru/1920x1080_995920_%5Bwww.ArtFile.ru%5D.jpg"); /* Шлях до вашого зображення */
+  background-size: cover; /* Покриває всю область, обрізаючи краї */
+  background-repeat: no-repeat; /* Запобігає повторенню зображення */
+  background-position: center; /* Центрує зображення */
+  /* Для повної впевненості, що фон є по всьому екрану (особливо на старих браузерах) */
+  min-height: 95vh; /* Висота всього екрану */
+  width: 100%;
+  margin: 0 auto;
 }
+
 #canvas {
   position: fixed;
   top: 0;
@@ -19,15 +27,12 @@ body {
 }
 
 .overlay {
-  padding: 0 15px;
-  margin: 0 auto;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   display: flex;
-  background: transparent;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -35,22 +40,21 @@ body {
   z-index: 10;
 }
 
-/* .title {
-  display: block;
-  margin-bottom: 30px;
-  font-size: 80px;
-  font-weight: bold;
+.title {
+  font-size: 90px;
+  margin-bottom: 38px;
   text-align: center;
+  font-weight: bold;
   color: #ffffff;
-  text-shadow: 0 0 10px rgb(255, 255, 255), 0 0 20px rgba(41, 128, 185, 0.6),
-    0 5px 20px rgba(0, 0, 1, 0.5), 2px 2px 0px rgba(52, 152, 219, 0.4);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+    0 0 20px rgba(41, 128, 185, 0.6), 0 5px 20px rgba(52, 73, 94, 0.5),
+    2px 2px 0px rgba(52, 152, 219, 0.4);
   animation: crystallize 3s ease-in-out infinite, fadeInDown 1.5s ease-out;
-
   letter-spacing: 6px;
-} */
+}
 
 .year {
-  font-size: 300px;
+  font-size: 280px;
   font-weight: bold;
   background: linear-gradient(
     135deg,
@@ -70,19 +74,24 @@ body {
 }
 
 .message {
-  font-size: 38px;
+  font-size: 30px;
   color: #ffffff;
   text-align: center;
   max-width: 750px;
-  padding: 35px;
-  margin-top: 28px;
+  padding: 32px;
+  margin-top: 20px;
   filter: drop-shadow(0 5px 15px rgb(0, 0, 0));
-  text-shadow: 0 0 20px rgba(233, 198, 5, 0.5);
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  text-shadow: 0 0 20px rgba(158, 135, 2, 0.5);
+  background: linear-gradient(
+    135deg,
+    rgba(44, 62, 80, 0.5),
+    rgba(52, 73, 94, 0.5)
+  );
   border-radius: 30px;
-  backdrop-filter: blur(10px);
-  border: 3px solid rgba(253, 177, 12, 0.4);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 0 20px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(12px);
+  border: 3px solid rgba(93, 173, 226, 0.4);
+  box-shadow: 0 8px 32px rgba(41, 128, 185, 0.4),
+    inset 0 0 20px rgba(52, 152, 219, 0.2);
   animation: fadeInUp 2s ease-out 0.7s both;
   line-height: 1.8;
 }
@@ -95,32 +104,31 @@ body {
 }
 
 .wishes {
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   color: #ffffff;
   text-align: center;
   font-weight: bold;
   max-width: 750px;
-  margin-top: 20px;
-  filter: drop-shadow(0 5px 15px rgb(0, 0, 0));
-  /* text-shadow: 0 0 20px rgba(0, 0, 0, 0.5); */
-  line-height: 1.8;
+  margin-top: 28px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+    0 0 20px rgba(41, 128, 185, 0.6), 0 5px 20px rgba(52, 73, 94, 0.5),
+    2px 2px 0px rgba(52, 152, 219, 0.4);
+  animation: crystallize 3s ease-in-out infinite, fadeInDown 1.5s ease-out;
+  line-height: 1.5;
   font-size: 40px;
-  letter-spacing: 6px;
 }
 
 .name {
   display: block;
-  margin-bottom: 30px;
-  margin-top: 20px;
-  font-size: 42px;
+  margin: 20px;
+  font-size: 40px;
   font-weight: bold;
   background: linear-gradient(
     135deg,
-    #000000 0%,
-    #000000 25%,
-    #ff5d5d 50%,
-    #ffffff 75%,
-    #f70202 100%
+    #ffffff 0%,
+    #c25a5a 25%,
+    #f80606 50%,
+    #f1e315 75%,
+    #000000 100%
   );
   background-size: 200% 200%;
   -webkit-background-clip: text;
@@ -135,11 +143,12 @@ body {
   0%,
   100% {
     text-shadow: 0 0 10px rgba(64, 156, 255, 0.8),
-      0 0 20px rgba(15, 54, 80, 0.6), 0 5px 20px rgba(52, 73, 94, 0.5);
+      0 0 20px rgba(41, 128, 185, 0.6), 0 5px 20px rgba(52, 73, 94, 0.5);
   }
   50% {
-    text-shadow: 0 0 20px rgb(40, 96, 134), 0 0 40px rgba(52, 152, 219, 0.8),
-      0 5px 30px rgba(6, 24, 35, 0.7), 0 0 60px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 0 20px rgba(93, 173, 226, 1),
+      0 0 40px rgba(52, 152, 219, 0.8), 0 5px 30px rgba(41, 128, 185, 0.7),
+      0 0 60px rgba(93, 173, 226, 0.5);
   }
 }
 
