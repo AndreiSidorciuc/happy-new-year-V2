@@ -39,7 +39,7 @@ body {
   pointer-events: none;
   z-index: 10;
 }
-
+/* 
 .title {
   font-size: 90px;
   margin-bottom: 32px;
@@ -51,7 +51,7 @@ body {
     2px 2px 0px rgba(52, 152, 219, 0.4);
   animation: crystallize 3s ease-in-out infinite, fadeInDown 1.5s ease-out;
   letter-spacing: 6px;
-}
+} */
 
 .year {
   font-size: 280px;
